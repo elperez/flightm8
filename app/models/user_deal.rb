@@ -1,2 +1,0 @@
-class UserDeal < ApplicationRecord
-end
