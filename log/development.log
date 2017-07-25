@@ -76,3 +76,51 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1329842995018861890)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2017-07-25 12:44:36 +1000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"first_name"=>"sam", "last_name"=>"melb", "email"=>"sam@young", "password"=>"[FILTERED]", "password_confirm"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "sam@young"], ["password_digest", "$2a$10$WoZCM8bONQs4YVpL8qElZu9kEBmKwb/5G8QinIvruVSZWQcb7W1Ry"], ["created_at", "2017-07-25 02:44:36.567473"], ["updated_at", "2017-07-25 02:44:36.567473"]]
+  [1m[35m (71.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 79.2ms)
+
+
+  
+NoMethodError (undefined method `redirect' for #<UsersController:0x007fced336ac78>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-07-25 12:45:01 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"first_name"=>"sam", "last_name"=>"melb", "email"=>"sam@young", "password"=>"[FILTERED]", "password_confirm"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "sam@young"], ["password_digest", "$2a$10$MeBt7/1NU38d6F0reU7vG.7x8WGzDwFl1oRJnpJ0LqF/hWlwq71Su"], ["created_at", "2017-07-25 02:45:11.847924"], ["updated_at", "2017-07-25 02:45:11.847924"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000users/2/preferences
+Completed 302 Found in 82ms (ActiveRecord: 1.7ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/users/new" for 127.0.0.1 at 2017-07-25 12:46:41 +1000
+Processing by UsersController#new as HTML
+  Rendering users/signup.html.erb within layouts/application
+  Rendered users/signup.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 369ms (Views: 367.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-07-25 12:46:53 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"name_first"=>"sam", "name_last"=>"young", "hometown"=>"melb", "email"=>"sw", "password"=>"[FILTERED]", "password_confirm"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name_first", "name_last", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_first", "sam"], ["name_last", "young"], ["email", "sw"], ["password_digest", "$2a$10$E/AelwUPZh8yNmOMZc4jDeEFbI.iR.kmsOoJH9tXdfZCr0FDXZKMG"], ["created_at", "2017-07-25 02:46:53.892790"], ["updated_at", "2017-07-25 02:46:53.892790"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000users/3/preferences
+Completed 302 Found in 73ms (ActiveRecord: 2.1ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
