@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :deals
   resources :users
 
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'pages#home'
 
@@ -25,7 +24,7 @@ Rails.application.routes.draw do
   get '/login', to: 'pages#show_login'
 
   post '/login', to: 'pages#login'
-  get '/deals', to: 'deals#deals'  #change later from pages to deals/user controller
+  get '/users/1/dashboard', to: 'users#deals'  #change later from pages to deals/user controller
 
   post '/session', to: 'pages#login'
 

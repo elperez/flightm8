@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def deals
+    render :dashboard
+  end
+
   def new #Get signup form
     render "users/signup"
   end
