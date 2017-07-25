@@ -16,13 +16,18 @@ class UsersController < ApplicationController
     newUser.name_last = params[:name_last]
     newUser.hometown = params[:hometown]
     newUser.save
+    newUser.reload
     newUser_id = newUser.id
     session[:user_id] = newUser_id
-
-    redirect_to "users/#{session[:user_id]}/preferences"
+    byebug
+    redirect_to "/users/#{session[:user_id]}/preferences"
   end
   def submit #Make a new preference record, create a new session, go to deal list
 
+  end
+
+  def survey
+    render "preferences/survey"
   end
 
 end
