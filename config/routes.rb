@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :user_deals
+  resources :preferences
+  resources :deals
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'pages#home'
   get '/signup', to: 'pages#show_signup'

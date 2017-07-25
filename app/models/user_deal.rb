@@ -1,0 +1,2 @@
+class UserDeal < ApplicationRecord
+end
