@@ -6,9 +6,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'pages#home'
 
-  get '/users/new', to: 'users#show_signup'
+  get '/users/new', to: 'users#new' #Get signup form
 
-  post '/users', to: 'users#signup'
+  post '/users', to: 'users#signup' #Create user and go to question page
+
+  post '/users/:id/preferences', to: 'users#submit' #Make a new preference record, create a new session, go to deal list
+
+
+
+
+
+
 
   get '/login', to: 'pages#show_login'
 

@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
 
-  def show_signup #Get signup form
-    render :signup
+  def new #Get signup form
+    render "users/signup"
   end
 
-  def signup #Create new user
-    redirect_to '/deals'
+  def signup #Create user and go to question page
+
+  end
+
+  def submit #Make a new preference record, create a new session, go to deal list
+
   end
 
 end
