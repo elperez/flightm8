@@ -1,8 +1,8 @@
 class CreatePreferences < ActiveRecord::Migration[5.1]
   def change
     create_table :preferences do |t|
-      t.real :price_min
-      t.real :price_max
+      t.decimal :price_min, precision: 10, scale: 2
+      t.decimal :price_max, precision: 10, scale: 2
       t.integer :asia
       t.integer :europe
       t.integer :southamerica
