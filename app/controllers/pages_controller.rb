@@ -12,8 +12,12 @@ class PagesController < ApplicationController
     redirect_to '/deals'
   end
 
-  def deals
-    render :dashboard
+  def show_signup
+    render :signup
+  end
+
+  def signup
+    redirect_to '/deals'
   end
 
   def show_save_deal

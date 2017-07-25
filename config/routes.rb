@@ -25,9 +25,10 @@ Rails.application.routes.draw do
 
   get '/login', to: 'pages#show_login'
 
-  post '/session', to: 'pages#login'
+  post '/login', to: 'pages#login'
+  get '/deals', to: 'deals#deals'  #change later from pages to deals/user controller
 
-  get '/deals', to: 'pages#deals'  #change later from pages to deals/user controller
+  post '/session', to: 'pages#login'
 
   get '/save_deal', to: 'pages#show_save_deal' #change later from pages to deals/user controller
 
