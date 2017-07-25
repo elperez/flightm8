@@ -20,10 +20,6 @@ class PagesController < ApplicationController
     redirect_to '/deals'
   end
 
-  def deals
-    render :dashboard
-  end
-
   def show_save_deal
     render :savedeal
   end
