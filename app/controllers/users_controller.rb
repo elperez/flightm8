@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     dateMax = Deal.where('date_end <= ?',userPref[:date_end_travel])
     @deals = regionSet & priceMin & priceMax & dateMin & dateMax
     @userPref = userPref
-    byebug
     # render "users/dashboard"
     render :dashboard
   end
