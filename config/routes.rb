@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 
   get '/users/:id/deals', to: 'users#deals' #Get user's deals list (filtered by preferences)
 
-  get '/login', to: 'pages#show_login'
-  post '/login', to: 'pages#login'
+  get '/login', to: 'pages#show_login' #Get the login page
+  post '/login', to: 'pages#login' #Create a new session and go to deal list
+  delete '/login', to: 'pages#logout' #Clear the session out and go to login
 
-
+  patch '/users/:user_id/deals/:deal_id', to: 'deals#favourite'
 
 
 

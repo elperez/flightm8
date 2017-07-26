@@ -26,6 +26,12 @@ class PagesController < ApplicationController
     end
   end
 
+  def logout
+    session.delete(:user_id)
+    session.delete(:user_name)
+    render "pages/login"
+  end
+
   def show_signup
     render :signup
   end

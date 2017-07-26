@@ -30,7 +30,8 @@
       <span class="mdl-layout-title"><img src="/CHECKMATE.png" alt=""></span>
       <nav class="mdl-navigation">
         <p class="mdl-navigation__link" style="color: black; font-weight: bold;"></p>
-        <form action="/session" method="post">
+        <form action="/login" method="post">
+          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
           <input type="hidden" name="_method" value="delete">
           <button class="mdl-navigation__link" style="color: red; ont-weight: bold;">Log out</button>
           <hr style="margin: 0;">
