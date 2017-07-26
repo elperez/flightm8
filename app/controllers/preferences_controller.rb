@@ -19,7 +19,7 @@ class PreferencesController < ApplicationController
     newPref.user_id = session[:user_id]
     newPref.save
     newPref_id = newPref.id
-    redirect_to "/users/#{session[:user_id]}/deals"
+    redirect_to "/users/#{session[:user_id]}/dashboard"
   end
 
 end

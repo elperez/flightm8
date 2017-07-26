@@ -15,7 +15,7 @@ class PagesController < ApplicationController
       if success
   			session[:user_id] = user.id
   			session[:user_name] = "#{user.name_first} #{user.name_last}"
-        redirect_to "/users/#{user.id}/deals"
+        redirect_to "/users/#{user.id}/dashboard"
       else
   		  @error = "An error occurred. Please check your login credentials and try again."
         render "pages/login"
@@ -24,6 +24,12 @@ class PagesController < ApplicationController
   		@error = "An error occurred. Please check your login credentials and try again."
       render "pages/login"
     end
+  end
+
+  def logout
+    session.delete(:user_id)
+    session.delete(:user_name)
+    render "pages/login"
   end
 
   def show_signup
