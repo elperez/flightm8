@@ -9,7 +9,21 @@ class PagesController < ApplicationController
   end
 
   def login
-    redirect_to '/deals'
+    user = User.find_by( email: params[:email] )
+    if user
+      success = user.authenticate(params[:password])
+      if success
+  			session[:user_id] = user.id
+  			session[:user_name] = "#{user.firstname} #{user.lastname}"
+        redirect "/users/#{user.id}/deals"
+      else
+  		  @error = "An error occurred. Please check your login credentials and try again."
+        render "pages/login"
+      end
+    else
+  		@error = "An error occurred. Please check your login credentials and try again."
+      render "pages/login"
+    end
   end
 
   def show_signup
