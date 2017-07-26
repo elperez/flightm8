@@ -14,8 +14,8 @@ class PagesController < ApplicationController
       success = user.authenticate(params[:password])
       if success
   			session[:user_id] = user.id
-  			session[:user_name] = "#{user.firstname} #{user.lastname}"
-        redirect "/users/#{user.id}/deals"
+  			session[:user_name] = "#{user.name_first} #{user.name_last}"
+        redirect_to "/users/#{user.id}/deals"
       else
   		  @error = "An error occurred. Please check your login credentials and try again."
         render "pages/login"
