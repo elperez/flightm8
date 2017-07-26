@@ -14,4 +14,8 @@ class DealsController < ApplicationController
     end
   end
 
+  def purchase
+
+  end
+
 end

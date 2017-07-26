@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   include UsersHelper
 
-  def deals
+  def preferreddeals
     userPref = Preference.find_by(user_id: current_user)
     regionSet = []
     if userPref[:asia] == 1
@@ -30,6 +30,10 @@ class UsersController < ApplicationController
     userPref = userPref
     result = [deals,userPref]
     render json: result
+  end
+
+  def saveddeals
+
   end
 
   def dashboard
