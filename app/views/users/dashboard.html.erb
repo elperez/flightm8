@@ -1,12 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/dashboard/style.css">
-</head>
-<body>
+
   <header class="header">
     <div>
       <h1>FlightM8</h1>
@@ -24,7 +16,7 @@
         </div>
         <div class="rkmd-checkbox checkbox-ripple checkbox-light">
           <label class="input-checkbox checkbox-lightBlue">
-            <input type="checkbox" id="checkbox-5" unchecked>
+            <input type="checkbox" id="checkbox-5" checked>
             <span class="checkbox"></span>
           </label>
           <label for="checkbox-5" class="label">Europe</label>
@@ -76,55 +68,16 @@
           </button>
         </div>
       </div>
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Amsterdam</h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-          description
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            Add to favorites
-          </a>
-        </div>
-        <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">favorite</i>
-          </button>
-        </div>
-      </div>
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">favorite</h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-          description
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            Add to favorites
-          </a>
-        </div>
-        <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">favorite</i>
-          </button>
-        </div>
-      </div>
     </div>
   </main>
   <script id="source" type="template">
-    <div class="movie-result">
-      <h2>{{title}}</h2>
-      <img src="{{giffy}}" alt="HTML5 Icon" style="width:300px;height:300px;">
-    </div>
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">favorite</h2>
+      <div class="mdl-card__title" background={{image_url}}>
+        <h2 class="mdl-card__title-text">{{title}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        description
+        {{description}}
+        {{price}}
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -143,6 +96,7 @@
     var deal = <%= @deals.to_json %>;
     var userPref = <%= @userPref.to_json %>;
   </script>
+  
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
-</body>
-</html>
