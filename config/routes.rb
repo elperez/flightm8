@@ -10,23 +10,14 @@ Rails.application.routes.draw do
   post '/users/:id/preferences', to: 'preferences#create' #Make a new preference record, create a new session, go to deal list
 
   get '/users/:id/dashboard', to: 'users#dashboard' #Goes to the dashboard
-  get '/api/mydeals', to: 'users#deals' #Returns the user's preferred deals in JSON
+  get '/api/mypreferreddeals', to: 'users#preferreddeals' #Returns the user's preferred deals in JSON
+  get '/api/mysaveddeals', to: 'users#saveddeals' #Returns the user's saved deals in JSON #####BLANK#####
 
   get '/login', to: 'pages#show_login' #Get the login page
   post '/login', to: 'pages#login' #Create a new session and go to deal list
   delete '/login', to: 'pages#logout' #Clear the session out and go to login
 
+  get '/users/:user_id/deals/:deal_id', to: 'deals#purchase'
   patch '/users/:user_id/deals/:deal_id', to: 'deals#favourite'
-
-
-
-
-  # get '/users/1/dashboard', to: 'users#deals'  #change later from pages to deals/user controller
-
-  post '/session', to: 'pages#login'
-
-  get '/save_deal', to: 'pages#show_save_deal' #change later from pages to deals/user controller
-
-  post '/add_to_favorites', to: 'pages#add_to_favorites' #change later from pages to deals/user controller
 
 end
