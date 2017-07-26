@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/users/:id/preferences', to: 'preferences#create' #Make a new preference record, create a new session, go to deal list
 
   get '/users/:id/dashboard', to: 'users#dashboard' #Goes to the dashboard
-  get '/users/:id/deals', to: 'users#deals' #Returns the user's preferred deals in JSON
+  get '/api/mydeals', to: 'users#deals' #Returns the user's preferred deals in JSON
 
   get '/login', to: 'pages#show_login' #Get the login page
   post '/login', to: 'pages#login' #Create a new session and go to deal list
