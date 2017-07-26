@@ -25,10 +25,15 @@ class UsersController < ApplicationController
     priceMax = Deal.where('price <= ?',userPref[:price_max])
     dateMin = Deal.where('date_start >= ?',userPref[:date_start_travel])
     dateMax = Deal.where('date_end <= ?',userPref[:date_end_travel])
-    @deals = regionSet & priceMin & priceMax & dateMin & dateMax
-    @userPref = userPref
-    # render "users/dashboard"
-    render :dashboard
+    deals = regionSet & priceMin & priceMax & dateMin & dateMax
+    userPref = userPref
+    result = [deals,userPref]
+    render json: result
+    byebug
+  end
+
+  def dashboard
+
   end
 
   def survey #Get signup form
