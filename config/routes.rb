@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/users/:id/preferences', to: 'preferences#survey' #Get survey form
   post '/users/:id/preferences', to: 'preferences#create' #Make a new preference record, create a new session, go to deal list
 
-  get '/users/:id/deals', to: 'deals#show' #Get user's deals list (filtered by preferences)
+  get '/users/:id/deals', to: 'users#deals' #Get user's deals list (filtered by preferences)
 
 
 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/login', to: 'pages#show_login'
 
   post '/login', to: 'pages#login'
-  get '/users/1/dashboard', to: 'users#deals'  #change later from pages to deals/user controller
+  # get '/users/1/dashboard', to: 'users#deals'  #change later from pages to deals/user controller
 
   post '/session', to: 'pages#login'
 
