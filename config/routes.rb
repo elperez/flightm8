@@ -11,14 +11,14 @@ Rails.application.routes.draw do
 
   get '/users/:id/deals', to: 'users#deals' #Get user's deals list (filtered by preferences)
 
-
-
-
-
-
   get '/login', to: 'pages#show_login'
+  post '/session', to: 'pages#login'
 
-  post '/login', to: 'pages#login'
+
+
+
+
+
   # get '/users/1/dashboard', to: 'users#deals'  #change later from pages to deals/user controller
 
   post '/session', to: 'pages#login'

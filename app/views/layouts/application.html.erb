@@ -29,15 +29,13 @@
     <div class="mdl-layout__drawer" style="padding: 0">
       <span class="mdl-layout-title"><img src="/CHECKMATE.png" alt=""></span>
       <nav class="mdl-navigation">
-        <% if logged_in? %>
-        <p class="mdl-navigation__link" style="color: black; font-weight: bold;"><%=User.find(session["user_id"]).email%></p>
+        <p class="mdl-navigation__link" style="color: black; font-weight: bold;"></p>
         <form action="/session" method="post">
           <input type="hidden" name="_method" value="delete">
           <button class="mdl-navigation__link" style="color: red; ont-weight: bold;">Log out</button>
           <hr style="margin: 0;">
 
         </form>
-        <% end %>
 
 
         <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Profile +</a>
