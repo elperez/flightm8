@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :user_deals
-  resources :preferences
-  resources :deals
-  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'pages#home'
@@ -13,6 +9,7 @@ Rails.application.routes.draw do
   get '/users/:id/preferences', to: 'preferences#survey' #Get survey form
   post '/users/:id/preferences', to: 'preferences#create' #Make a new preference record, create a new session, go to deal list
 
+  get '/users/:id/deals', to: 'deals#show' #Get user's deals list (filtered by preferences)
 
 
 
