@@ -1,3 +1,57 @@
 // Place all the styles related to the deals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+
+
+  .graybox {
+    background-color:#ddd;
+  }
+
+  .container {
+    position: relative;
+    width: 200px;
+  }
+
+  .background {
+    width: 100%;
+    text-align: center;
+    height: 90%;
+    font-weight: bold;
+    color: white;
+    padding-top: 30vh;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: fixed;
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+    position: absolute;
+    right: 16px;
+  }
+
+  .mdl-layout__drawer-button, .mdl-layout__drawer{
+    left: initial;
+    right: 0;
+  }
+
+  .mdl-layout__drawer{
+    transform:translateX(250px);
+    color: black;
+  }
+
+  .demo-layout-transparent .mdl-layout__header,
+  .demo-layout-transparent .mdl-layout__drawer-button {
+    /* This background is dark, so we set text to white. Use 87% black instead if
+    your background is light. */
+    color: white;
+  }
+
+  .material-icons {
+    color: black;
+  }
