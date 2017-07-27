@@ -92,8 +92,8 @@
       {{price}}
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        Add to favorites
+      <a href="/users/<%= session[:user_id] %>/deals/{{id}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Purchase
       </a>
     </div>
     <div class="mdl-card__menu">
