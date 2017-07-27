@@ -29,7 +29,7 @@ class PagesController < ApplicationController
   def logout
     session.delete(:user_id)
     session.delete(:user_name)
-    render "pages/login"
+    render "pages/home"
   end
 
   def show_signup
