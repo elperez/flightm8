@@ -1,102 +1,76 @@
-
-  <header class="header">
-    <div>
-      <h1>FlightM8</h1>
+<header class="header">
+  <div>
+    <h1>FlightM8</h1>
+  </div>
+</header>
+<nav>
+  <!-- <div class="filter">
+    <div class="filterListContinent" align="center">
+      <div id="asia-filter" class="rkmd-checkbox checkbox-ripple checkbox-light">
+        <label class="input-checkbox checkbox-lightBlue">
+          <input type="checkbox" id="checkbox-5" checked>
+          <span class="checkbox"></span>
+        </label>
+        <label for="checkbox-5" class="label">Asia</label>
+      </div>
+      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
+        <label class="input-checkbox checkbox-lightBlue">
+          <input type="checkbox" id="checkbox-5" checked>
+          <span class="checkbox"></span>
+        </label>
+        <label for="checkbox-5" class="label">Europe</label>
+      </div>
+      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
+        <label class="input-checkbox checkbox-lightBlue">
+          <input type="checkbox" id="checkbox-5" unchecked>
+          <span class="checkbox"></span>
+        </label>
+        <label for="checkbox-5" class="label">Africa</label>
+      </div>
+      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
+        <label class="input-checkbox checkbox-lightBlue">
+          <input type="checkbox" id="checkbox-5" unchecked>
+          <span class="checkbox"></span>
+        </label>
+        <label for="checkbox-5" class="label">North America</label>
+      </div>
+      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
+        <label class="input-checkbox checkbox-lightBlue">
+          <input type="checkbox" id="checkbox-5" unchecked>
+          <span class="checkbox"></span>
+        </label>
+        <label for="checkbox-5" class="label">South America</label>
+      </div>
+    </div> -->
+    <!-- <button class="btn btn-default filter-button" data-filter="all">Search Deals</button> -->
+  <!-- </div> -->
+  <button class="btn btn-default filter-button" id="savedDealsButton" data-filter="all">My Saved Deals</button>
+  <button class="btn btn-default filter-button" id="savedDealsButton" data-filter="all">Show Preferred Deals</button>
+</nav>
+<main>
+  <div class="results">
+  </div>
+</main>
+<script id="source" type="template">
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title" background={{image_url}}>
+      <h2 class="mdl-card__title-text">{{title}}</h2>
     </div>
-  </header>
-  <nav>
-    <div class="filter">
-      <div class="filterListContinent" align="center">
-        <div id="asia-filter" class="rkmd-checkbox checkbox-ripple checkbox-light">
-          <label class="input-checkbox checkbox-lightBlue">
-            <input type="checkbox" id="checkbox-5" checked>
-            <span class="checkbox"></span>
-          </label>
-          <label for="checkbox-5" class="label">Asia</label>
-        </div>
-        <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-          <label class="input-checkbox checkbox-lightBlue">
-            <input type="checkbox" id="checkbox-5" checked>
-            <span class="checkbox"></span>
-          </label>
-          <label for="checkbox-5" class="label">Europe</label>
-        </div>
-        <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-          <label class="input-checkbox checkbox-lightBlue">
-            <input type="checkbox" id="checkbox-5" unchecked>
-            <span class="checkbox"></span>
-          </label>
-          <label for="checkbox-5" class="label">Africa</label>
-        </div>
-        <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-          <label class="input-checkbox checkbox-lightBlue">
-            <input type="checkbox" id="checkbox-5" unchecked>
-            <span class="checkbox"></span>
-          </label>
-          <label for="checkbox-5" class="label">North America</label>
-        </div>
-        <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-          <label class="input-checkbox checkbox-lightBlue">
-            <input type="checkbox" id="checkbox-5" unchecked>
-            <span class="checkbox"></span>
-          </label>
-          <label for="checkbox-5" class="label">South America</label>
-        </div>
-      </div>
-      <button class="btn btn-default filter-button" data-filter="all">Search Deals</button>
+    <div class="mdl-card__supporting-text">
+      {{description}}
+      {{price}}
     </div>
-  </nav>
-  <main>
-    <!-- Wide card with share menu button -->
-    <div class="results">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Vietnam</h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-          <p>description</p>
-          <p>date_start_travel - date_end_travel</p>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            View Details
-          </a>
-        </div>
-        <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">share</i>
-          </button>
-        </div>
-      </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Add to favorites
+      </a>
     </div>
-  </main>
-  <script id="source" type="template">
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title" background={{image_url}}>
-        <h2 class="mdl-card__title-text">{{title}}</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        {{description}}
-        {{price}}
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Add to favorites
-        </a>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">favorite</i>
-        </button>
-      </div>
+    <div class="mdl-card__menu">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">favorite</i>
+      </button>
     </div>
-  </script>
+  </div>
+</script>
 
-  <script>
-    var deal = <%= @deals.to_json %>;
-    var userPref = <%= @userPref.to_json %>;
-  </script>
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
