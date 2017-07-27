@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post '/login', to: 'pages#login' #Create a new session and go to deal list
   delete '/login', to: 'pages#logout' #Clear the session out and go to login
 
+  get '/save/deals/:deal_id', to: 'deals#favourite'
   get '/users/:user_id/deals/:deal_id', to: 'deals#purchase'
-  patch '/users/:user_id/deals/:deal_id', to: 'deals#favourite'
 
 end

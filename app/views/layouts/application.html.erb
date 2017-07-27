@@ -22,44 +22,14 @@
         <!-- Navigation. We hide it in small screens. -->
       </div>
     </header>
-    <div class="mdl-layout__drawer" style="padding: 0">
-      <span class="mdl-layout-title"><img src="/FLIGHTm8.png" alt=""></span>
-      <nav class="mdl-navigation">
-        <p class="mdl-navigation__link" style="color: black; font-weight: bold;"></p>
-        <form action="/login" method="post">
-          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-          <input type="hidden" name="_method" value="delete">
-          <button class="mdl-navigation__link" style="color: red; ont-weight: bold;">Log out</button>
-          <hr style="margin: 0;">
-        </form>
 
-        <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Profile +</a>
-        <hr style="margin: 0;">
-
-        <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Deals +</a>
-        <a class="mdl-navigation__link" href="">Groups</a>
-        <a class="mdl-navigation__link" href="">Group Planning</a>
-        <a class="mdl-navigation__link" href="">Group Trips</a>
-        <a class="mdl-navigation__link" href="">Group Likes</a>
-        <hr style="margin: 0;">
-
-        <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Group Deals</a>
-        <a class="mdl-navigation__link" href="">Your Points</a>
-        <a class="mdl-navigation__link" href="">See Your Rewards</a>
-        <a class="mdl-navigation__link" href="">Book Using Rewards</a>
-        <hr style="margin: 0;">
-
-        <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Contact Us</a>
-
-      </nav>
-    </div>
     <main class="mdl-layout__content">
 
       <%= yield %>
 
     </main>
 
-    <footer class="mdl-mini-footer" style="color: black; background-color: white; justify-content: center; padding-top: 0">
+    <footer class="mdl-mini-footer" style="color: black; background-color: white; justify-content: center; padding-top: 0;">
       <div class="mdl-mini-footer__middle-section">
         <div class="mdl-logo" style="color: black">
           <h5>BEST MATES. BEST RATES</h5>

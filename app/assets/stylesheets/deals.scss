@@ -6,7 +6,10 @@
 
 
 
-
+footer{
+  position: sticky;
+  z-index: 1;
+}
 
   .graybox {
     background-color:#ddd;
@@ -31,7 +34,6 @@
 
   .wrapper {
     box-sizing: border-box;
-    position: absolute;
     right: 16px;
   }
 

@@ -3,6 +3,37 @@
     <h1>FlightM8</h1>
   </div>
 </header>
+<div class="mdl-layout__drawer" style="padding: 0">
+  <span class="mdl-layout-title"><img src="/FLIGHTm8.png" alt=""></span>
+  <nav class="mdl-navigation">
+    <p class="mdl-navigation__link" style="color: black; font-weight: bold;"></p>
+    <form action="/login" method="post">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <input type="hidden" name="_method" value="delete">
+      <button class="mdl-navigation__link" style="color: red; ont-weight: bold;">Log out</button>
+      <hr style="margin: 0;">
+    </form>
+
+    <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Profile +</a>
+    <hr style="margin: 0;">
+
+    <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Deals +</a>
+    <a class="mdl-navigation__link" href="">Groups</a>
+    <a class="mdl-navigation__link" href="">Group Planning</a>
+    <a class="mdl-navigation__link" href="">Group Trips</a>
+    <a class="mdl-navigation__link" href="">Group Likes</a>
+    <hr style="margin: 0;">
+
+    <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Group Deals</a>
+    <a class="mdl-navigation__link" href="">Your Points</a>
+    <a class="mdl-navigation__link" href="">See Your Rewards</a>
+    <a class="mdl-navigation__link" href="">Book Using Rewards</a>
+    <hr style="margin: 0;">
+
+    <a class="mdl-navigation__link" href="" style="color: black; font-weight: bold;">Contact Us</a>
+
+  </nav>
+</div>
 <nav>
   <!-- <div class="filter">
     <div class="filterListContinent" align="center">
@@ -67,7 +98,11 @@
     </div>
     <div class="mdl-card__menu">
       <button class="mdl-button mdl-js-ripple-effect saveThisDeal" data-deal_id="{{id}}" data-user_id="<%= session[:user_id] %>">
-        Save
+        <% if true %>
+        <%= "Unsave" %>
+        <% else %>
+        <%= "Save" %>
+        <% end %>
       </button>
     </div>
   </div>
