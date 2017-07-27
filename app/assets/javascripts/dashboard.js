@@ -1,6 +1,5 @@
 window.onload = function() {
 
-  debugger;
   var savedDealsButton = document.querySelector('#savedDealsButton');
   var preferredDealsButton = document.querySelector('#preferredDealsButton');
 
@@ -26,12 +25,10 @@ window.onload = function() {
     });
   }
   function showSavedDeals(){
-    debugger;
     var settings = {
       url: '/api/mysaveddeals'
     }
     $.ajax(settings).done(function(response) {
-      debugger;
       var deals = response[0];
       for (i=0 ; i<deals.length; i++){
         var source = $('#source').html();
@@ -57,6 +54,11 @@ window.onload = function() {
         url: concat_url
       }
       $.ajax(settings).done(function(response) {
+        if (response["added"] != undefined ) {
+          event.target.textContent = "Unsave"
+        } else {
+          event.target.textContent = "Save"
+        }
         //update the dom based on the response
 
       });
