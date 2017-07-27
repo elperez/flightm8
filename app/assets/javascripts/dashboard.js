@@ -11,7 +11,6 @@ window.onload = function() {
       resultsBox = document.querySelector(".results");
       resultsBox.innerHTML = "";
       var deals = response["deals"];
-      debugger;
       for (i=0 ; i<deals.length; i++){
         var source = $('#source').html();
         var template = Handlebars.compile(source);
@@ -32,7 +31,6 @@ window.onload = function() {
       url: '/api/mysaveddeals'
     }
     $.ajax(settings).done(function(response) {
-      debugger;
       resultsBox = document.querySelector(".results");
       resultsBox.innerHTML = "";
       var deals = response;
@@ -45,7 +43,7 @@ window.onload = function() {
           description: deals[i].description,
           price: deals[i].price,
           image_url: deals[i].image_url,
-          is_favorite: deals[i].is_favorite
+          is_favorite: true //Hard Coded// //Hard Coded// //Hard Coded//
         });
         $('.results').append(html);
       }
@@ -54,7 +52,6 @@ window.onload = function() {
 
   function saveThisDeal(event){
     if ( event.target.classList.contains("saveThisDeal") ){
-      debugger;
       var deal_id = event.target.getAttribute("data-deal_id")
       var user_id = event.target.getAttribute("data-user_id")
       var concat_url = '/save/deals/' + deal_id
@@ -63,9 +60,9 @@ window.onload = function() {
       }
       $.ajax(settings).done(function(response) {
         if (response["added"] != undefined ) {
-          event.target.textContent = "Unsave"
+          event.target.classList.add("fav_true")
         } else {
-          event.target.textContent = "Save"
+          event.target.classList.remove("fav_true")
         }
       });
     }
