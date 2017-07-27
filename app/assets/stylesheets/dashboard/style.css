@@ -66,6 +66,11 @@ h1 {
   background-color: #333;
 }
 
+
 .fav_true {
   background-color: rgb(100,180,130) !important;
+
+nav{
+  text-align: center;
+
 }
