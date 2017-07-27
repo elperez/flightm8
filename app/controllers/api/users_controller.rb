@@ -38,7 +38,7 @@ class Api::UsersController < ApplicationController
     result = []
     savedDeals = UserDeal.where(user_id:current_user)
     savedDeals.each do |savedDeal|
-      deal = Deal.find(savedDeal.id)
+      deal = Deal.find(savedDeal.deal_id)
       result.push(deal)
     end
     render json: result
