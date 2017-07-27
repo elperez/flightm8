@@ -50,19 +50,14 @@ window.onload = function() {
 
   function saveThisDeal(event){
     if ( event.target.classList.contains("saveThisDeal") ){
-      debugger;
       var deal_id = event.target.getAttribute("data-deal_id")
       var user_id = event.target.getAttribute("data-user_id")
       var concat_url = '/users/' + user_id + '/deals/' + deal_id
       var settings = {
-        url: concat_url,
-        data: {
-          type: 'PATCH'
-        }
+        url: concat_url
       }
       $.ajax(settings).done(function(response) {
-        debugger;
-
+        //update the dom based on the response
 
       });
     }
