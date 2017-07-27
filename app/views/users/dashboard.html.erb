@@ -98,7 +98,11 @@
     </div>
     <div class="mdl-card__menu">
       <button class="mdl-button mdl-js-ripple-effect saveThisDeal" data-deal_id="{{id}}" data-user_id="<%= session[:user_id] %>">
-        Save
+        <% if true %>
+        <%= "Unsave" %>
+        <% else %>
+        <%= "Save" %>
+        <% end %>
       </button>
     </div>
   </div>

@@ -8,7 +8,8 @@ window.onload = function() {
       url: '/api/mypreferreddeals'
     }
     $.ajax(settings).done(function(response) {
-
+      resultsBox = document.querySelector(".results");
+      resultsBox.innerHTML = "";
       var deals = response[0];
       for (i=0 ; i<deals.length; i++){
         var source = $('#source').html();
@@ -18,7 +19,8 @@ window.onload = function() {
           title: deals[i].title,
           description: deals[i].description,
           price: deals[i].price,
-          image_url: deals[i].image_url
+          image_url: deals[i].image_url,
+          saved: deals[i].savedDeal
         });
         $('.results').append(html);
       }
@@ -29,7 +31,9 @@ window.onload = function() {
       url: '/api/mysaveddeals'
     }
     $.ajax(settings).done(function(response) {
-      var deals = response[0];
+      resultsBox = document.querySelector(".results");
+      resultsBox.innerHTML = "";
+      var deals = response;
       for (i=0 ; i<deals.length; i++){
         var source = $('#source').html();
         var template = Handlebars.compile(source);
@@ -38,7 +42,8 @@ window.onload = function() {
           title: deals[i].title,
           description: deals[i].description,
           price: deals[i].price,
-          image_url: deals[i].image_url
+          image_url: deals[i].image_url,
+          saved: deals[i].savedDeal
         });
         $('.results').append(html);
       }
@@ -49,7 +54,7 @@ window.onload = function() {
     if ( event.target.classList.contains("saveThisDeal") ){
       var deal_id = event.target.getAttribute("data-deal_id")
       var user_id = event.target.getAttribute("data-user_id")
-      var concat_url = '/users/' + user_id + '/deals/' + deal_id
+      var concat_url = '/save/deals/' + deal_id
       var settings = {
         url: concat_url
       }
