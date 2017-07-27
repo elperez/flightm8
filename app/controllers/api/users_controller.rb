@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
   include UsersHelper
 
   def preferreddeals
+    result={}
     userPref = Preference.find_by(user_id: current_user)
     regionSet = []
     if userPref[:asia] == 1
@@ -27,8 +28,9 @@ class Api::UsersController < ApplicationController
     dateMin = Deal.where('date_start >= ?',userPref[:date_start_travel])
     dateMax = Deal.where('date_end <= ?',userPref[:date_end_travel])
     deals = regionSet & priceMin & priceMax & dateMin & dateMax
-    userPref = userPref
-    result = [deals,userPref]
+    result[:deals] = dealsToJson(deals)
+    result[:userPref] = userPrefToJson(userPref)
+
     render json: result
   end
 
@@ -36,9 +38,56 @@ class Api::UsersController < ApplicationController
     result = []
     savedDeals = UserDeal.where(user_id:current_user)
     savedDeals.each do |savedDeal|
-      deal = Deal.find(savedDeal.deal_id)
+      deal = Deal.find(savedDeal.id)
       result.push(deal)
     end
     render json: result
+  end
+
+  def dealsToJson(preferredDeals)
+    jsonResult = []
+    savedDealIdList = []
+    savedDeals = UserDeal.where(user_id:current_user)
+    savedDeals.each do |savedDeal|
+      deal = Deal.find(savedDeal.deal_id)
+      savedDealIdList.push(deal.id)
+    end
+    preferredDeals.each do |deal|
+      jsonResult.push({
+        :id => deal.id,
+        :image_url => deal.image_url,
+        :title => deal.title,
+        :price => deal.price,
+        :date_start => deal.date_start,
+        :date_end => deal.date_end,
+        :created_at => deal.created_at,
+        :updated_at => deal.updated_at,
+        :asia => deal.asia,
+        :europe => deal.europe,
+        :africa => deal.africa,
+        :oceania => deal.oceania,
+        :northamerica => deal.northamerica,
+        :southamerica => deal.southamerica,
+        :is_favorite => (savedDealIdList.include? deal.id)
+      })
+    end
+    jsonResult
+  end
+
+  def userPrefToJson(userPref)
+    jsonResult = {
+      :price_max => userPref.price_max,
+      :image_url => userPref.price_min,
+      :title => userPref.asia,
+      :price => userPref.europe,
+      :date_start => userPref.southamerica,
+      :date_end => userPref.northamerica,
+      :created_at => userPref.africa,
+      :updated_at => userPref.oceania,
+      :asia => userPref.date_start_travel,
+      :europe => userPref.date_end_travel,
+      :africa => userPref.user_id,
+    }
+    jsonResult
   end
 end
