@@ -116,19 +116,19 @@ newUser = User.new
 newUser.name_first = "Erik"
 newUser.name_last = "Smith"
 newUser.hometown = "Sydney"
-newUser.email = "sam@thompson.id.au"
-newUser.password = "password1234"
+newUser.email = "a@b.com"
+newUser.password = "password"
 newUser.save
 user1_Id = newUser.id
 
 newPref = Preference.new
-newPref.price_max = 3000
-newPref.price_min = 1000
+newPref.price_max = 10000
+newPref.price_min = 100
 newPref.asia = 1
-newPref.europe = nil
+newPref.europe = 1
 newPref.southamerica = 1
 newPref.northamerica = 1
-newPref.africa = nil
+newPref.africa = 1
 newPref.oceania = 1
 newPref.date_start_travel = Date.new(2017,7,30)
 newPref.date_end_travel = Date.new(2017,8,30)
@@ -138,6 +138,11 @@ newPref.save
 newUserDeal = UserDeal.new
 newUserDeal.user_id = user1_Id
 newUserDeal.deal_id = deal1_Id
+newUserDeal.save
+
+newUserDeal = UserDeal.new
+newUserDeal.user_id = user1_Id
+newUserDeal.deal_id = deal7_Id
 newUserDeal.save
 
 newUserDeal = UserDeal.new

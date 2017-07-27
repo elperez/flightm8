@@ -1,0 +1,77 @@
+/*cards*/
+.demo-card-wide.mdl-card {
+  display: inline-block;
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+/*checkbox*/
+button.btn.btn-default.filter-button {
+  align: center;
+}
+
+.filterListContinent > * {
+  display: inline-block
+}
+
+.rkmd-checkbox {
+  color: #818181;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
+}
+
+.input-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: -9px;
+  }
+
+/*dashboard*/
+body {
+  padding: 20px;
+  background: white;
+  position: relative;
+  padding: 0px 0px;
+}
+
+header {
+  background: white;
+  text-align: center;
+
+}
+
+h1 {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px;
+}
+
+.btn-default:active .filter-button:active
+{
+
+  color: white;
+}
+
+.filter{
+  background-color: #333;
+}
+
+
+.fav_true {
+  background-color: rgb(100,180,130) !important;
+}
+
+nav{
+  text-align: center;
+
+}
