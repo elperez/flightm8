@@ -1,6 +1,6 @@
 <header class="header">
   <div>
-    <h1>FlightM8</h1>
+    <h1><img src="/FLIGHTm8.png" alt=""></h1>
   </div>
 </header>
 <div class="mdl-layout__drawer" style="padding: 0">
@@ -98,11 +98,7 @@
     </div>
     <div class="mdl-card__menu">
       <button class="mdl-button mdl-js-ripple-effect saveThisDeal" data-deal_id="{{id}}" data-user_id="<%= session[:user_id] %>">
-        <% if true %>
-        <%= "Unsave" %>
-        <% else %>
-        <%= "Save" %>
-        <% end %>
+        Save
       </button>
     </div>
   </div>
