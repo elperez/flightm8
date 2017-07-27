@@ -33,7 +33,13 @@ class UsersController < ApplicationController
   end
 
   def saveddeals
-
+    result = []
+    savedDeals = UserDeal.where(user_id:current_user)
+    savedDeals.each do |savedDeal|
+      deal = Deal.find(savedDeal.id)
+      result.push(deal)
+    end
+    render json: result
   end
 
   def dashboard
