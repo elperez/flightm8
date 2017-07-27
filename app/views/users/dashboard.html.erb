@@ -45,7 +45,7 @@
     <!-- <button class="btn btn-default filter-button" data-filter="all">Search Deals</button> -->
   <!-- </div> -->
   <button class="btn btn-default filter-button" id="savedDealsButton" data-filter="all">My Saved Deals</button>
-  <button class="btn btn-default filter-button" id="savedDealsButton" data-filter="all">Show Preferred Deals</button>
+  <button class="btn btn-default filter-button" id="preferredDealsButton" data-filter="all">Show Preferred Deals</button>
 </nav>
 <main>
   <div class="results">
@@ -66,8 +66,8 @@
       </a>
     </div>
     <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">favorite</i>
+      <button class="mdl-button mdl-js-ripple-effect saveThisDeal" data-deal_id="{{id}}" data-user_id="<%= session[:user_id] %>">
+        Save
       </button>
     </div>
   </div>
