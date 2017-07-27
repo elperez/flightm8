@@ -15,7 +15,7 @@ class DealsController < ApplicationController
   end
 
   def purchase
-
+    render :purchase
   end
 
 end
