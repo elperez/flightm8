@@ -46,13 +46,13 @@ button.btn.btn-default.filter-button {
 /*dashboard*/
 body {
   padding: 20px;
-  background: #fafafa;
+  background: white;
   position: relative;
   padding: 0px 0px;
 }
 
 header {
-  background: #7bc3d1;
+  background: white;
   text-align: center;
 
 }
