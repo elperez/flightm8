@@ -20,7 +20,7 @@ window.onload = function() {
           description: deals[i].description,
           price: deals[i].price,
           image_url: deals[i].image_url,
-          saved: deals[i].savedDeal
+          saved: deals[i].is_favorite
         });
         $('.results').append(html);
       }
@@ -43,7 +43,7 @@ window.onload = function() {
           description: deals[i].description,
           price: deals[i].price,
           image_url: deals[i].image_url,
-          saved: deals[i].savedDeal
+          saved: deals[i].is_favorite
         });
         $('.results').append(html);
       }
