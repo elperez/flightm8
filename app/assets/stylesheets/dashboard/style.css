@@ -68,7 +68,7 @@ h1 {
 
 
 .fav_true {
-  background-color: rgb(100,180,130) !important;
+  background-color: rgba(100,180,130,.7) !important;
 }
 
 nav{
