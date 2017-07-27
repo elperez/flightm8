@@ -2,7 +2,11 @@
 
 This project is called FLIGHTm8
 
+The app works as a secondary market for travel deals, in which users can sign up and view deals relevant to them.
 
+The user is required to enter information about their budget, availability for travel, and travel interests, and the app will show them a specific list of deals matching their interests and requirements.
+
+Once a user has found a deal they are interested in, they can save it to their "saved deals" list, which they can access at any time via the "My Saved Deals" button on the user dashboard.
 
 * Ruby version
 For this project we used ruby version 2.4.1 for the backend base language
