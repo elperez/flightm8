@@ -57,6 +57,7 @@ class Api::UsersController < ApplicationController
         :id => deal.id,
         :image_url => deal.image_url,
         :title => deal.title,
+        :description => deal.description,
         :price => deal.price,
         :date_start => deal.date_start,
         :date_end => deal.date_end,
