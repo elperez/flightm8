@@ -1,85 +1,92 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.rkmd-checkbox {
-  color: #818181;
-  font-size: 15px;
+/*cards*/
+.demo-card-wide.mdl-card {
+  display: inline-block;
+  width: 31%;
+  padding: 1% 1% 1% 0% 1%;
+  margin: 1% 1%;
+  float: left;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.filterListContinent > * {
+  display: inline-block
+}
+
+.price {
+  float: right;
+  margin: 0px 5px;
+  font-size: 14px;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: .5px;
+  color: blue;
+}
 
-  .input-checkbox {
-    position: relative;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    text-align: center;
-    vertical-align: -9px;
+/*dashboard*/
+body {
+  padding: 20px;
+  background: white;
+  position: relative;
+  padding: 0px 0px;
+}
 
-    input[type="checkbox"] {
-      visibility: hidden;
-      position: absolute;
-      left: 7px;
-      bottom: 7px;
-      margin: 0;
-      padding: 0;
-      outline: none;
-      cursor: pointer;
-      opacity: 0;
+header {
+  background: white;
+  text-align: center;
+}
 
-      & + .checkbox:before {
-        position: absolute;
-        left: 4px;
-        bottom: 8px;
-        width: 18px;
-        height: 18px;
-        font-family: 'Material Icons';
-        font-weight: normal;
-        font-style: normal;
-        font-size: 24px;
-        line-height: 1;
-        text-transform: none;
-        letter-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        direction: ltr;
-        vertical-align: -6px;
+h1 {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px;
+}
 
-        /* Support for all WebKit browsers. */
-        -webkit-font-smoothing: antialiased;
-        /* Support for Safari and Chrome. */
-        text-rendering: optimizeLegibility;
+.btn-default:active .filter-button:active
+{
+  color: white;
+}
 
-        /* Support for Firefox. */
-        -moz-osx-font-smoothing: grayscale;
+.filter{
+  background-color: #333;
+  text-align: center;
+  padding: 15px 0px;
+}
 
-        /* Support for IE. */
-        font-feature-settings: 'liga';
 
-        transition: all .2s ease;
-        z-index: 1;
-      }
+.fav_true {
+  background-color: rgba(100,180,130, 0.4) !important;
+}
 
-      & + .checkbox:before { content: "\e835"; color: #717171; }
+@media screen and (max-width: 980px) {
 
-      &:checked + .checkbox:before { content: "\e834"; }
+	.demo-card-wide.mdl-card {
+		width: 94%;
+		padding: 1% 3%;
+    margin: 1% 3%;
+    display: block;
+	}
+}
 
-      &:active:not(:disabled) + .checkbox:before { transform: scale3d(0.88, 0.88, 1); }
-
-      &:disabled + .checkbox:before { color: rgba(0,0,0,0.157) !important; }
-    }
+@media screen and (max-width: 600px) {
+	.demo-card-wide.mdl-card {
+		width: auto;
+    padding: 20px 0px;
+	}
+  .btn{
+    color: orange;
   }
-
-  &.checkbox-light {
-    label, .label { color: #FFF; }
-    input[type="checkbox"] + .checkbox:before { color: #FFF; }
-    input[type="checkbox"]:disabled + .checkbox:before { color: #5d5d5d !important; }
-
-    &.checkbox-rotate {
-      input[type="checkbox"] + .checkbox:before { border-color: #FFF; }
-      input[type="checkbox"]:disabled + .checkbox:before { border-color: #5d5d5d !important; }
-    }
+  .filter{
+    size: 3;
+    padding: 5px 0px;
+    margin: 5px auto;
   }
-
-  label, .label { cursor: pointer; }
+  .mdl-card__supporting-text.mdl-card__supporting-text{
+    font-style: 12px;
+  }
 }
