@@ -1,3 +1,8 @@
+<form action="/login" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="_method" value="delete">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left: 20px">Log Out</button>
+</form>
 <header class="header">
   <div>
     <h1><img src="/FLIGHTm8.png" alt=""></h1>
@@ -40,9 +45,8 @@
     </div>
 </div>
 <div class="filter">
-
-  <button class="btn btn-default filter-button" id="savedDealsButton" data-filter="all">My Saved Deals</button>
-  <button class="btn btn-default filter-button" id="preferredDealsButton" data-filter="all">Show Preferred Deals</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="savedDealsButton">My Saved Deals</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="preferredDealsButton">My Preferred Deals</button>
 </div>
 <main>
   <div class="results">
