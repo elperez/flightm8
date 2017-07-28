@@ -11,6 +11,7 @@ window.onload = function() {
       resultsBox = document.querySelector(".results");
       resultsBox.innerHTML = "";
       var deals = response["deals"];
+
       for (i=0 ; i<deals.length; i++){
         var source = $('#source').html();
         var template = Handlebars.compile(source);
@@ -31,6 +32,7 @@ window.onload = function() {
       url: '/api/mysaveddeals'
     }
     $.ajax(settings).done(function(response) {
+
       resultsBox = document.querySelector(".results");
       resultsBox.innerHTML = "";
       var deals = response;

@@ -39,50 +39,11 @@
       </nav>
     </div>
 </div>
-<nav>
-  <!-- <div class="filter">
-    <div class="filterListContinent" align="center">
-      <div id="asia-filter" class="rkmd-checkbox checkbox-ripple checkbox-light">
-        <label class="input-checkbox checkbox-lightBlue">
-          <input type="checkbox" id="checkbox-5" checked>
-          <span class="checkbox"></span>
-        </label>
-        <label for="checkbox-5" class="label">Asia</label>
-      </div>
-      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-        <label class="input-checkbox checkbox-lightBlue">
-          <input type="checkbox" id="checkbox-5" checked>
-          <span class="checkbox"></span>
-        </label>
-        <label for="checkbox-5" class="label">Europe</label>
-      </div>
-      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-        <label class="input-checkbox checkbox-lightBlue">
-          <input type="checkbox" id="checkbox-5" unchecked>
-          <span class="checkbox"></span>
-        </label>
-        <label for="checkbox-5" class="label">Africa</label>
-      </div>
-      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-        <label class="input-checkbox checkbox-lightBlue">
-          <input type="checkbox" id="checkbox-5" unchecked>
-          <span class="checkbox"></span>
-        </label>
-        <label for="checkbox-5" class="label">North America</label>
-      </div>
-      <div class="rkmd-checkbox checkbox-ripple checkbox-light">
-        <label class="input-checkbox checkbox-lightBlue">
-          <input type="checkbox" id="checkbox-5" unchecked>
-          <span class="checkbox"></span>
-        </label>
-        <label for="checkbox-5" class="label">South America</label>
-      </div>
-    </div> -->
-    <!-- <button class="btn btn-default filter-button" data-filter="all">Search Deals</button> -->
-  <!-- </div> -->
+<div class="filter">
+
   <button class="btn btn-default filter-button" id="savedDealsButton" data-filter="all">My Saved Deals</button>
   <button class="btn btn-default filter-button" id="preferredDealsButton" data-filter="all">Show Preferred Deals</button>
-</nav>
+</div>
 <main>
   <div class="results">
   </div>
@@ -93,8 +54,8 @@
       <h2 class="mdl-card__title-text">{{title}}</h2>
     </div>
     <div class="mdl-card__supporting-text">
-      {{description}}
-      {{price}}
+      <p>"{{description}}"</p>
+      <p class="price">{{price}}</p>
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <a href="/users/<%= session[:user_id] %>/deals/{{id}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
