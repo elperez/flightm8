@@ -20,6 +20,10 @@ class DealsController < ApplicationController
   end
 
   def purchase
+    deal_id = params[:deal_id]
+    user_id = params[:user_id]
+    @deal = Deal.find(deal_id)
+    @user = User.find(user_id)
     render :purchase
   end
 end
