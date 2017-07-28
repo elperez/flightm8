@@ -14,7 +14,7 @@
           <a href="/users/<%= session[:user_id] %>/deals/{{id}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Confirm
           </a>
-          <a href="/users/<%= session[:user_id] %>/deals/{{id}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          <a onclick="goBack()" href="/users/<%= session[:user_id] %>/deals/{{id}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Back
           </a>
         </div>
@@ -23,3 +23,8 @@
   </div>
   <div class="mdl-layout-spacer"></div>
 </div>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
