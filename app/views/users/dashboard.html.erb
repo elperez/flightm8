@@ -1,15 +1,15 @@
 <form action="/login" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <input type="hidden" name="_method" value="delete">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left: 20px">Log Out</button>
+  <button id="logout" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left: 20px">Log Out</button>
 </form>
 <header class="header">
   <div>
-    <h1><img src="/FLIGHTm8.png" alt=""></h1>
+    <h1><img src="/FLIGHTm8_large_black_mix.png" alt=""></h1>
   </div>
 </header>
 <div class="mdl-layout__drawer" style="padding: 0">
-  <span class="mdl-layout-title"><img src="/FLIGHTm8.png" alt=""></span>
+  <span class="mdl-layout-title"><img src="/FLIGHTm8_large_black_mix.png" alt=""></span>
   <nav class="mdl-navigation">
     <p class="mdl-navigation__link" style="color: black; font-weight: bold;"></p>
     <div class="mdl-layout__drawer" style="padding: 0">
@@ -19,7 +19,7 @@
         <form action="/login" method="post">
           <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
           <input type="hidden" name="_method" value="delete">
-          <button class="mdl-navigation__link" style="color: red; ont-weight: bold;">Log out</button>
+          <button id="logout" class="mdl-navigation__link" style="color: red; ont-weight: bold;">Log out</button>
           <hr style="margin: 0;">
         </form>
 
