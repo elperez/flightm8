@@ -23,13 +23,15 @@ footer{
   .background {
     width: 100%;
     text-align: center;
-    height: 90%;
+    height: 100%;
     font-weight: bold;
     color: white;
     padding-top: 30vh;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 100%;
     position: fixed;
+    border: 0;
+
   }
 
   .wrapper {
